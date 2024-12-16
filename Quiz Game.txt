@@ -1,0 +1,51 @@
+def quiz_game():
+    print("Welcome to the Quiz Game!\n")
+
+    # Questions, options, and answers
+    questions = [
+        {
+            "question": "What is the capital of France?",
+            "options": ["A. Paris", "B. Madrid", "C. Berlin", "D. Rome"],
+            "answer": "A"
+        },
+        {
+            "question": "Which programming language is known as the language of the web?",
+            "options": ["A. Python", "B. C++", "C. JavaScript", "D. Java"],
+            "answer": "C"
+        },
+        {
+            "question": "What is the square root of 64?",
+            "options": ["A. 6", "B. 7", "C. 8", "D. 9"],
+            "answer": "C"
+        },
+        {
+            "question": "Who wrote the play 'Romeo and Juliet'?",
+            "options": ["A. Charles Dickens", "B. William Shakespeare", "C. Mark Twain", "D. Jane Austen"],
+            "answer": "B"
+        }
+    ]
+
+    score = 0
+
+    # Loop through questions
+    for i, q in enumerate(questions):
+        print(f"Question {i+1}: {q['question']}")
+        for option in q['options']:
+            print(option)
+        
+        # Get user's answer
+        answer = input("Enter your answer (A/B/C/D): ").strip().upper()
+        
+        # Validate answer
+        if answer == q['answer']:
+            print("Correct!\n")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {q['answer']}.\n")
+
+    # Final score
+    print(f"You got {score} out of {len(questions)} questions correct!")
+
+# Run the quiz game
+if __name__ == "__main__":
+    quiz_game()
